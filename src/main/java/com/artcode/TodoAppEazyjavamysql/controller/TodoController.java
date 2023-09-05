@@ -1,6 +1,7 @@
 package com.artcode.TodoAppEazyjavamysql.controller;
 
 import com.artcode.TodoAppEazyjavamysql.request.CreateTodoRequest;
+import com.artcode.TodoAppEazyjavamysql.request.UpdateTodoRequest;
 import com.artcode.TodoAppEazyjavamysql.response.TodoResponse;
 import com.artcode.TodoAppEazyjavamysql.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +35,13 @@ public class TodoController {
     @GetMapping("/todo/get")
     public List<TodoResponse> get()throws Exception{
         return  service.get();
+    }
+
+    @PutMapping("/todo/{id}")
+    public TodoResponse update(
+            @PathVariable("id") Integer id,
+            @RequestBody UpdateTodoRequest request
+            )throws Exception{
+        return service.updateStatus(id,request.getStatus());
     }
 }
