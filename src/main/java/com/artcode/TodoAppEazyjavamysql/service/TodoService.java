@@ -3,6 +3,7 @@ package com.artcode.TodoAppEazyjavamysql.service;
 import com.artcode.TodoAppEazyjavamysql.entity.Todo;
 import com.artcode.TodoAppEazyjavamysql.repository.TodoJpaRepository;
 import com.artcode.TodoAppEazyjavamysql.request.CreateTodoRequest;
+import com.artcode.TodoAppEazyjavamysql.response.GetTodoByIdResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,5 +25,15 @@ public class TodoService {
             throw new Exception(ex);
         }
 
+    }
+
+    public GetTodoByIdResponse getById(int id)throws Exception{
+        try {
+
+             Todo todo = repository.getById(id);
+             return new GetTodoByIdResponse(todo);
+        }catch (Exception ex){
+            throw  new Exception(ex);
+        }
     }
 }
