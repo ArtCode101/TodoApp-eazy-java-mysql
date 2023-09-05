@@ -11,5 +11,4 @@ public class TodoAppEazyJavaMysqlApplication {
 		SpringApplication.run(TodoAppEazyJavaMysqlApplication.class, args);
 	}
 
-
 }

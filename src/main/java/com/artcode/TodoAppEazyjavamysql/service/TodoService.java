@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TodoService {
@@ -49,6 +50,17 @@ public class TodoService {
                 responses.add(new TodoResponse(todo));
             }
             return responses;
+        }catch (Exception ex){
+            throw new Exception(ex);
+        }
+    }
+
+    public TodoResponse updateStatus(Integer id ,Boolean status)throws Exception{
+        try {
+            Todo todo = repository.findById(id).get();
+            todo.setStatus(status);
+            todo = repository.save(todo);
+            return new TodoResponse(todo);
         }catch (Exception ex){
             throw new Exception(ex);
         }
