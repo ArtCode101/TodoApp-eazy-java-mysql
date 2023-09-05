@@ -6,7 +6,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 @Data
-public class GetTodoByIdResponse {
+public class TodoResponse {
 
     private Integer id;
 
@@ -18,7 +18,7 @@ public class GetTodoByIdResponse {
 
     private String timestamp;
 
-    public GetTodoByIdResponse(Todo todo) {
+    public TodoResponse(Todo todo) {
         this.id = todo.getId();
         this.topic = todo.getTopic();
         this.message = todo.getMessage();

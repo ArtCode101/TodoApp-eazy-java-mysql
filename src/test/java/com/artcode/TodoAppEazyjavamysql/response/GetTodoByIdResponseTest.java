@@ -11,7 +11,7 @@ public class GetTodoByIdResponseTest {
         todo.setTopic("test");
         todo.setMessage("test2");
 
-        GetTodoByIdResponse response = new GetTodoByIdResponse(todo);
+        TodoResponse response = new TodoResponse(todo);
 
         System.out.println(response.toString());
 
