@@ -44,4 +44,12 @@ public class TodoController {
             )throws Exception{
         return service.updateStatus(id,request.getStatus());
     }
+
+    @DeleteMapping("/todo/{id}")
+    public void delete(
+            @PathVariable("id") Integer id
+    )throws Exception{
+        service.delete(id);
+        return;
+    }
 }

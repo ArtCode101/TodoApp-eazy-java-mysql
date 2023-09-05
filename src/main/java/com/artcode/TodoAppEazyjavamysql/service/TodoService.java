@@ -65,4 +65,12 @@ public class TodoService {
             throw new Exception(ex);
         }
     }
+
+    public void delete(Integer id) throws Exception {
+        try {
+            repository.deleteById(id);
+        }catch (Exception ex){
+            throw new Exception(ex);
+        }
+    }
 }
