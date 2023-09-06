@@ -25,14 +25,14 @@ public class TodoController {
         return;
     }
 
-    @GetMapping("/todo/get/{id}")
+    @GetMapping("/todo/{id}")
     public TodoResponse getById(
             @PathVariable("id") Integer id
     )throws Exception{
         return service.getById(id);
     }
 
-    @GetMapping("/todo/get")
+    @GetMapping("/todo")
     public List<TodoResponse> get()throws Exception{
         return  service.get();
     }
